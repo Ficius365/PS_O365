@@ -1,0 +1,16 @@
+Write-Host "Getting all distribution groups..."; 
+$SMTP = Read-Host "Who are you looking for? ";
+Write-Host "..........................................";  
+$AllDG = Get-DistributionGroup | Where-Object {$_.GroupType -eq "Universal"} 
+ForEach ($DG in $AllDG)
+{
+	$Members = Get-DistributionGroupMember -Identity $DG.PrimarySmtpAddress | Where-Object{$_.RecipientType -eq "UserMailbox"}; 
+	ForEach ($Member in $Members)
+	{ 
+		if ($Member.PrimarySmtpAddress -eq $SMTP){
+			Write-Host "Distribution list: " $DG.PrimarySmtpAddress; 
+			Write-Host "Member: " $Member.PrimarySmtpAddress; 
+			Write-Host "................................";
+		}
+	}
+}
