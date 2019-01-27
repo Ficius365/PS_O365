@@ -2,6 +2,7 @@
 # Before run this code you will need connect to ExO. 
 # https://docs.microsoft.com/en-us/powershell/exchange/exchange-online/connect-to-exchange-online-powershell/connect-to-exchange-online-powershell?view=exchange-ps 
 
+
 $SMTP = Read-Host "Who are you looking for? ";
 Write-Host "..........................................";  
 Write-Host "Getting all distribution groups..."; 
