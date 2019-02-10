@@ -27,7 +27,8 @@ foreach ($folderStatistic in $folderStatistics)
     $folderStat = New-Object PSObject
     Add-Member -InputObject $folderStat -MemberType NoteProperty -Name FolderPath -Value $folderPath
     Add-Member -InputObject $folderStat -MemberType NoteProperty -Name FolderQuery -Value $folderQuery
-    $folderQueries += $folderStat
+    $folderQueries += $folderStat 
+    #$folderQueries += $folderId 
 }
 Write-Host "-----Exchange Folders-----"
 $folderQueries | Format-Table 
