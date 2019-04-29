@@ -103,7 +103,7 @@ If(($IsEverReadVal -band 0x0400) -eq 0x0400){
 $props = @{ DateTimeReceived  = $Item.DateTimeReceived
     Sender            = $Item.Sender.Name;
     Subject           = $Item.Subject;
-    Mailbox			  = $MailboxName
+    Mailbox			  = $targetMailbox
     IsRead            = $item.IsRead
     IsEverRead        = $IsEverRead
     Error             = $NULL
