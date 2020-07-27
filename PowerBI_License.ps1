@@ -1,6 +1,7 @@
 # This script will create a report with all users with PowerBi service assigned (enabled or not). 
 # Report include DisplayName, AssignedTimestamp, CapabilityStatus and Service (will be always PowerBi)
 # You will be able to select export path changing variable called: $reportPath
+# You will need install and connect (with GA credential) to AzureAD module: Install-Module AzureAD and Connect-AzureAD 
 
 $usersWithPowerBI = Get-AzureADUser -All $true | Where-Object {$_.AssignedPlans.service -eq "PowerBI"}
 $usersWithPowerBITable = @()
